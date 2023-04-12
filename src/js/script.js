@@ -2,16 +2,16 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   slider({
-    sliderBlockSelector: '.offer__slider',
-    currentSelector: '#current',
-    totalSelector: '#total',
-    innerSelector: '.offer__slider-inner',
-    wrapperSelector: '.offer__slider-wrapper',
-    slideSelector: '.offer__slide',
-    navigationSelector: '.offer__slider-navigation',
-    dotSelector: '.offer__slider-dot',
-    nextArrowSelector: '.offer__slider-next',
-    prevArrowSelector: '.offer__slider-prev',
+    sliderBlockSelector: '.slider', // главный блок со слайдером
+    currentSelector: '#current', // номер текущего слайда
+    totalSelector: '#total', // количество слайдов
+    innerSelector: '.slider-inner', // горизонтальная лента со всеми слайдами
+    wrapperSelector: '.slider-wrapper', // окно, в котором показываются слайды
+    slideSelector: '.slide', // сами слайды
+    navigationSelector: '.slider-navigation', // блок с точками
+    dotSelector: '.slider-dot', // точки
+    nextArrowSelector: '.slider-next', // кнопка следующего слайда
+    prevArrowSelector: '.slider-prev', // кнопка предыдущего слайда
   });
 });
 
@@ -27,13 +27,13 @@ function slider({
   nextArrowSelector,
   prevArrowSelector,
 }) {
-  const sliderBlock = document.querySelector(sliderBlockSelector); // '.offer__slider'
-  const current = document.querySelector(currentSelector); // '#current'
-  const total = document.querySelector(totalSelector); // '#total'
-  const inner = document.querySelector(innerSelector); // '.offer__slider-inner'
-  const wrapper = document.querySelector(wrapperSelector); // '.offer__slider-wrapper'
-  const slides = document.querySelectorAll(slideSelector); // клоны сюда не попадут, это статический nodelist // '.offer__slide'
-  const nav = document.querySelector(navigationSelector); // блок с точками // '.offer__slider-navigation'
+  const sliderBlock = document.querySelector(sliderBlockSelector);
+  const current = document.querySelector(currentSelector);
+  const total = document.querySelector(totalSelector);
+  const inner = document.querySelector(innerSelector);
+  const wrapper = document.querySelector(wrapperSelector);
+  const slides = document.querySelectorAll(slideSelector); // клоны сюда не попадут, это статический nodelist
+  const nav = document.querySelector(navigationSelector);
 
   const transition = 0.75; // время плавного перехода между слайдами в секундах
   const wrapperWidth = parseInt(window.getComputedStyle(wrapper).width, 10); // parseInt отбрасывает 'px'

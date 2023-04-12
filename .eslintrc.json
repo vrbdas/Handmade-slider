@@ -8,6 +8,7 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
+  "ignorePatterns": ["bundle.js"],
   "rules": {
     "linebreak-style": 0,
     "no-console": 0,
